@@ -1,4 +1,6 @@
 import 'package:flutter/cupertino.dart';
+import 'package:apontamentos_ios/screens/parada.dart';
+import 'package:apontamentos_ios/screens/perfil.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -18,23 +20,10 @@ class HomeScreen extends StatelessWidget {
             ),
           ],
         ),
-        tabBuilder: (context, i) {
-          return CupertinoTabView(
-            builder: (context) {
-              return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  middle:
-                  (i == 0) ? const Text('Paradas') : const Text('Perfil'),
-                ),
-                child: Center(
-                  child: Text('Hello tab $i',
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .navLargeTitleTextStyle),
-                ),
-              );
-            },
-          );
+        tabBuilder: (context, index) {
+          return (index == 0)
+              ? CupertinoTabView(builder: (context) => const ParadaScreen())
+              : CupertinoTabView(builder: (context) => const PerfilScreen());
         });
   }
 }
