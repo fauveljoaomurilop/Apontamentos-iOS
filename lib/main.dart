@@ -1,9 +1,10 @@
 import 'package:flutter/cupertino.dart';
+import 'package:apontamentos_ios/screens/home.dart';
 
-void main() => runApp(const MyApp());
+void main() => runApp(const ApontamentosApp());
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class ApontamentosApp extends StatelessWidget {
+  const ApontamentosApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,44 +12,5 @@ class MyApp extends StatelessWidget {
       theme: CupertinoThemeData(),
       home: HomeScreen(),
     );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return CupertinoTabScaffold(
-        tabBar: CupertinoTabBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.clock),
-              label: 'Paradas',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
-              label: 'Perfil',
-            ),
-          ],
-        ),
-        tabBuilder: (context, i) {
-          return CupertinoTabView(
-            builder: (context) {
-              return CupertinoPageScaffold(
-                navigationBar: CupertinoNavigationBar(
-                  middle:
-                      (i == 0) ? const Text('Paradas') : const Text('Perfil'),
-                ),
-                child: Center(
-                  child: Text('Hello tab $i',
-                      style: CupertinoTheme.of(context)
-                          .textTheme
-                          .navLargeTitleTextStyle),
-                ),
-              );
-            },
-          );
-        });
   }
 }
