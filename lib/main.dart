@@ -9,7 +9,9 @@ class ApontamentosApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const CupertinoApp(
-      theme: CupertinoThemeData(),
+      theme: CupertinoThemeData(
+        primaryColor: Color(0xFF367C2B),
+      ),
       home: HomeScreen(),
     );
   }

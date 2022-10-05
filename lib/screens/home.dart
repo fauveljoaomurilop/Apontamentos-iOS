@@ -13,7 +13,7 @@ class HomeScreen extends StatelessWidget {
               label: 'Paradas',
             ),
             BottomNavigationBarItem(
-              icon: Icon(CupertinoIcons.person),
+              icon: Icon(CupertinoIcons.profile_circled),
               label: 'Perfil',
             ),
           ],
